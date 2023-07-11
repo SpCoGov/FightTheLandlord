@@ -7,8 +7,16 @@ import top.spco.utils.LogUtil;
 import java.util.*;
 
 /**
+ * 这个类代表了斗地主游戏中的一轮对局。
+ * 它包含了跟踪游戏当前状态的字段，例如当前的玩家是谁，行动顺序是怎样的，
+ * 以及每个玩家的手牌，地主牌和地主玩家等等。
+ * 它也包括了一些方法，用于初始化一轮游戏，决定玩家的行动顺序，和选择地主等等。
+ *
  * @author SpCo
- * @date 2023/7/3 0003 21:17
+ * @version 1.1
+ * @see Player
+ * @see Cards
+ * @since 1.0
  */
 public class Round {
     private static final Logger LOGGER = LogUtil.getLogger();
@@ -76,7 +84,8 @@ public class Round {
      * @param playerC 玩家 C
      */
     private void determineTurnOrder(Player playerA, Player playerB, Player playerC) {
-        turnOrder = new LinkedHashMap<>(); // 使用 LinkedHashMap 保持插入顺序
+        // 使用 LinkedHashMap 保持插入顺序
+        turnOrder = new LinkedHashMap<>();
 
         // 随机生成行动顺序
         List<Player> players = new ArrayList<>(Arrays.asList(playerA, playerB, playerC));

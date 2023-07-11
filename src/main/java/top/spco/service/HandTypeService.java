@@ -6,8 +6,11 @@ import top.spco.domain.HandType;
 import java.util.List;
 
 /**
+ * HandTypeService 接口定义了一系列方法用于确定牌型。
+ *
  * @author SpCo
- * @date 2023/7/11 0011 17:26
+ * @version 1.1
+ * @since 1.0
  */
 public interface HandTypeService {
     HandType getHandType(List<Cards> cards);

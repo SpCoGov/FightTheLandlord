@@ -8,8 +8,14 @@ import top.spco.utils.LogUtil;
 import java.util.Scanner;
 
 /**
+ * 命令系统负责处理和处理用户命令。
+ * 它负责初始化和启动命令线程，处理用户的命令输入，获取用户的确认输入，并处理用户的确认输入。
+ * <p>
+ * 该类遵循单例模式，使用 {@link #getInstance()} 获取单例实例。
+ *
  * @author SpCo
- * @date 2023/7/7 0007 22:35
+ * @version 1.1
+ * @since 1.0
  */
 public class CommandSystem {
     private static final Logger LOGGER = LogUtil.getLogger();

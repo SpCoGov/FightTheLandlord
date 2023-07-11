@@ -9,8 +9,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
+ * 这是一个 HandTypeService 接口的实现类。
+ *
  * @author SpCo
- * @date 2023/7/11 0011 17:26
+ * @version 1.1
+ * @since 1.0
  */
 public class HandTypeServiceImpl implements HandTypeService {
     @Override
@@ -75,10 +78,10 @@ public class HandTypeServiceImpl implements HandTypeService {
     }
 
     /**
-     * 判断一手牌是否为 "三张" 牌型
+     * 判断一手牌是否为 "三条" 牌型
      *
      * @param cards 一手牌的列表，列表中的卡牌已从大到小排序
-     * @return 如果是 "三张" 牌型，返回 true；否则返回 false
+     * @return 如果是 "三条" 牌型，返回 true；否则返回 false
      */
     @Override
     public boolean isThreeOfAKind(List<Cards> cards) {

@@ -2,10 +2,17 @@ package top.spco.domain;
 
 import java.util.Comparator;
 
-
 /**
+ * 这个枚举定义了斗地主游戏中的所有牌面。
+ * <p>
+ * 包括了四种花色（黑桃、红心、梅花、方块）的3至2（数字越大，代表的牌面越大），以及两个大小王。
+ * 每个枚举值都有一个对应的等级（rank），用于比较牌面的大小。
+ * <p>
+ * 另外，还定义了一个内部类 CardComparator 用于比较两张牌的大小。
+ *
  * @author SpCo
- * @date 2023/7/3 0003 21:11
+ * @version 1.1
+ * @since 1.0
  */
 
 public enum Cards {

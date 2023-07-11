@@ -11,6 +11,8 @@ import top.spco.system.CommandSystem;
 import top.spco.utils.LogUtil;
 
 /**
+ * 主类。
+ *
  * @author SpCo
  * @date 2023/7/3 0003 19:14
  */
@@ -22,6 +24,7 @@ public class Main {
     public static HandTypeService handTypeService = new HandTypeServiceImpl();
 
     public static void main(String[] args) {
+        LOGGER.info("Starting...");
         Player a = new Player("A");
         Player b = new Player("B");
         Player c = new Player("C");

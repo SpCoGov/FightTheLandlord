@@ -1,10 +1,12 @@
 package top.spco.domain;
 
-import java.util.List;
-
 /**
+ * HandType 枚举定义了所有可能的牌型，包括其对应的中文翻译。这些牌型用于标识和分类玩家手中的牌的类型。
+ * 每种牌型都与一个字符串相关联，该字符串是牌型的中文翻译。
+ *
  * @author SpCo
- * @date 2023/7/11 0011 17:22
+ * @version 1.0
+ * @since 2023/7/11
  */
 public enum HandType {
     SINGLE("单牌"),
@@ -23,6 +25,7 @@ public enum HandType {
     ILLEGAL("不合法的牌组");
 
     private final String translation;
+
     HandType(String translation) {
         this.translation = translation;
     }

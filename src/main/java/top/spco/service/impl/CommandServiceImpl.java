@@ -6,17 +6,19 @@ import top.spco.service.CommandService;
 import top.spco.utils.LogUtil;
 
 /**
+ * 这是一个 CommandService 接口的实现类。
+ *
  * @author SpCo
- * @date 2023/7/7 0007 17:37
+ * @version 1.1
+ * @since 1.0
  */
 public class CommandServiceImpl implements CommandService {
     private static final Logger LOGGER = LogUtil.getLogger();
 
-
     @Override
     public void onCommand(String command, String label, String[] args) {
         if (Main.commandSystem.isWaitingForConfirmation) {
-            Main.commandSystem.handleConfirmation(command);
+            Main.commandSystem. handleConfirmation(command);
             return;
         }
         switch (label) {
