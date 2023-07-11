@@ -1,8 +1,8 @@
-package top.spco;
+package top.spco.domain;
 
-import java.util.HashSet;
+import top.spco.Main;
+
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author SpCo
@@ -10,8 +10,25 @@ import java.util.Set;
  */
 
 public class Player {
-    private String name;
+    private final String name;
     private List<Cards> hand;
 
+    public Player(String name) {
+        this.name = name;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public List<Cards> getHand() {
+        return hand;
+    }
+
+    public void setHand(List<Cards> hand) {
+        if (!Main.cardService.isHandValid(hand)) {
+            throw new RuntimeException("Illegal hand.");
+        }
+        this.hand = hand;
+    }
 }

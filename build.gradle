@@ -1,15 +1,40 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-group = 'org.example'
+group = 'top.spco'
 version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'top.spco.Main'
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadow, project.configurations.runtimeClasspath]
+    manifest {
+        attributes 'Main-Class': 'top.spco.Main'
+    }
+    mergeServiceFiles()
+}
+
+
 dependencies {
+
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.20.0'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.20.0'
+    implementation 'org.jetbrains:annotations:24.0.0'
+
+    shadow 'org.apache.logging.log4j:log4j-core:2.20.0'
+    shadow 'org.apache.logging.log4j:log4j-api:2.20.0'
+
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
